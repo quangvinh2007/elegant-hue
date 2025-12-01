@@ -12,6 +12,11 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Chặn cuộn ngang */
+}
+
+html {
+  overflow-x: hidden; /* Chặn cuộn ngang cho toàn bộ trang */
 }
 
 a {
@@ -38,16 +43,17 @@ img {
   position: sticky;
   top: 0;
   z-index: 999;
-  margin: 0; /* Loại bỏ hoàn toàn margin */
-  padding: 0; /* Reset padding, để Header.jsx tự quản lý */
+  margin: 0;
+  padding: 0;
   font-family: "'Georgia', serif";
 }
 
 /* ===== MAIN CONTENT - FIXED ===== */
 main {
-  margin-top: 0; /* QUAN TRỌNG: Xóa margin-top */
-  padding-top: 0; /* Đảm bảo không padding */
+  margin-top: 0;
+  padding-top: 0;
   min-height: calc(100vh - 200px);
+  overflow-x: hidden; /* Chặn cuộn ngang */
 }
 
 /* ===== HERO/BANNER - FIXED ===== */
@@ -55,8 +61,8 @@ main {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  margin: 0; /* Loại bỏ margin */
-  padding: 0; /* Loại bỏ padding */
+  margin: 0;
+  padding: 0;
 }
 
 .hero img {
@@ -90,7 +96,7 @@ main {
   color: white;
   z-index: 2;
   width: 90%;
-  margin: 0; /* Xóa margin */
+  margin: 0;
 }
 
 .hero-content h1 {
@@ -138,7 +144,9 @@ main {
 /* ===== SECTION GENERAL ===== */
 .section {
   padding: 100px 0;
-  margin: 0; /* Loại bỏ margin */
+  margin: 0;
+  overflow-x: hidden; /* Chặn cuộn ngang */
+  max-width: 100vw; /* Giới hạn chiều rộng tối đa */
 }
 
 .section-title {
@@ -153,32 +161,38 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 700px;
+  max-width: 100%; /* Ngăn vượt khung */
 }
 
 .about-image-column {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%; /* Ngăn vượt khung */
 }
 
 .about-content-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 100%; /* Ngăn vượt khung */
 }
 
 /* ===== ROOM CAROUSEL ===== */
 .rooms-carousel-section {
   padding-bottom: 120px;
+  overflow-x: hidden; /* Chặn cuộn ngang */
 }
 
 .room-slide-group {
   gap: 30px;
+  max-width: 100%; /* Ngăn vượt khung */
 }
 
 /* ===== REVIEW SECTION ===== */
 .review-grid {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 100%; /* Ngăn vượt khung */
 }
 
 /* ===== FOOTER ===== */
@@ -242,7 +256,7 @@ footer {
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
   main {
-    margin-top: 0; /* QUAN TRỌNG: Giữ 0 cho mobile */
+    margin-top: 0;
   }
   .hero-content h1 {
     font-size: 2.5rem;

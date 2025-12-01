@@ -106,6 +106,7 @@ export default function Header() {
             alt="Elegant Hotel Logo"
             style={{
               height: "40px",
+              width: "40px",
               marginRight: "10px",
               borderRadius: "10px",
               boxShadow: "0 2px 5px rgba(0,0,0,0.1)",

@@ -3,30 +3,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// Định nghĩa màu sắc chủ đạo mới: sáng hơn, hài hòa với tông be nhạt và xám sáng
 const COLOR_PALETTE = {
-  primary: "#c0baa6ff", // Vàng nhạt sang trọng, hài hòa
-  footerBg: "#e5e9daff", // Xám nhạt sáng, tươi mới (sáng hơn header nếu cần phân biệt)
-  footerText: "#6C757D", // Xám trung bình cho chữ, dễ đọc hơn
-  linkHover: "#2C3E50", // Xám đậm nhạt cho hover
+  primary: "#c0baa6ff",
+  footerBg: "#e5e9daff",
+  footerText: "#6C757D",
+  linkHover: "#2C3E50",
 };
 
-// Data chi tiết bạn cung cấp
 const CONTACT_DATA = {
-  address: "60 Nguyễn Tri Phương, Thành phố Huế",
+  address: "60 Nguyen Tri Phuong, Thanh Pho Hue",
   phone: "0813 756 868",
-  zalo: "0813 756 868",
+  zalo: "0813756868",
   fb: "https://www.facebook.com/profile.php?id=61573199499721",
   tiktok: "https://www.tiktok.com/@eleganthotel.hue",
-  email: "elegant.hotelhue@gmail.com", // Giả định email
+  email: "elegant.hotelhue@gmail.com",
 };
 
 export default function Footer() {
   const footerStyle = {
     background: COLOR_PALETTE.footerBg,
     color: COLOR_PALETTE.footerText,
-    padding: "60px 20px 20px 20px",
-    fontFamily: "'Georgia', serif", // Font chữ serif sang trọng, đẹp hơn
+    padding: "60px 20px 20px",
+    fontFamily: "'Georgia', serif",
   };
 
   const containerStyle = {
@@ -47,19 +45,20 @@ export default function Footer() {
   const sectionTitleStyle = {
     color: COLOR_PALETTE.primary,
     fontSize: "1.4rem",
-    fontWeight: "600", // Giảm bold cho hài hòa
+    fontWeight: "600",
     marginBottom: "25px",
-    borderBottom: `2px solid ${COLOR_PALETTE.primary}80`, // Tăng opacity cho rõ hơn
+    borderBottom: `2px solid ${COLOR_PALETTE.primary}80`,
     paddingBottom: "10px",
     fontFamily: "'Georgia', serif",
   };
 
-  // Style cho icon mạng xã hội
-  const socialIconStyle = {
-    color: COLOR_PALETTE.footerText,
-    fontSize: "1.5rem",
-    marginRight: "20px",
-    transition: "color 0.3s ease",
+  const socialIconImage = {
+    width: "28px",
+    height: "28px",
+    marginRight: "18px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    transition: "transform 0.3s ease",
   };
 
   return (
@@ -73,7 +72,7 @@ export default function Footer() {
             marginBottom: "40px",
           }}
         >
-          {/* Cột 1: Giới thiệu và Logo */}
+          {/* Cột 1 */}
           <div>
             <div
               style={{
@@ -82,44 +81,38 @@ export default function Footer() {
                 marginBottom: "20px",
               }}
             >
-              {/* Giữ logo nhưng giảm độ tròn để hiển thị rõ hơn */}
               <img
                 src="/logo/logo.jpg"
                 alt="Elegant Hotel Logo"
                 style={{
                   height: "50px",
                   marginRight: "10px",
-                  borderRadius: "10px", // Giảm từ 50% xuống 10px để rõ nét hơn
-                  boxShadow: "0 2px 5px rgba(0,0,0,0.1)", // Thêm shadow nhẹ
+                  borderRadius: "10px",
+                  boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
                 }}
               />
               <h3
                 style={{
                   color: COLOR_PALETTE.primary,
                   fontSize: "1.8rem",
-                  fontWeight: "600", // Giảm bold
-                  fontFamily: "'Georgia', serif",
+                  fontWeight: "600",
                 }}
               >
                 Elegant Hotel
               </h3>
             </div>
-            <p
-              style={{
-                lineHeight: 1.7,
-                fontSize: "0.95rem",
-                fontFamily: "'Georgia', serif",
-              }}
-            >
+
+            <p style={{ lineHeight: 1.7, fontSize: "0.95rem" }}>
               Khách sạn Elegant Hotel Hue là điểm dừng chân sang trọng giữa lòng
               Cố đô, mang đến trải nghiệm nghỉ dưỡng 3 sao với dịch vụ tận tâm
               và thiết kế tinh tế.
             </p>
           </div>
 
-          {/* Cột 2: Liên kết nhanh */}
+          {/* Cột 2 */}
           <div>
-            <h4 style={sectionTitleStyle}>Liên kết nhanh</h4>
+            <h4 style={sectionTitleStyle}>Quick Links</h4>
+
             <NavLink
               to="/"
               style={linkStyle}
@@ -130,7 +123,7 @@ export default function Footer() {
                 (e.target.style.color = COLOR_PALETTE.footerText)
               }
             >
-              Trang chủ
+              Home
             </NavLink>
 
             <NavLink
@@ -143,10 +136,11 @@ export default function Footer() {
                 (e.target.style.color = COLOR_PALETTE.footerText)
               }
             >
-              Về chúng tôi
+              About Us
             </NavLink>
+
             <NavLink
-              to="/chinh-sach"
+              to="/lien-he"
               style={linkStyle}
               onMouseEnter={(e) =>
                 (e.target.style.color = COLOR_PALETTE.primary)
@@ -155,22 +149,21 @@ export default function Footer() {
                 (e.target.style.color = COLOR_PALETTE.footerText)
               }
             >
-              Chính sách
+              Contact
             </NavLink>
           </div>
 
-          {/* Cột 3: Thông tin liên hệ */}
+          {/* Cột 3 */}
           <div>
-            <h4 style={sectionTitleStyle}>Liên hệ</h4>
+            <h4 style={sectionTitleStyle}>Contact</h4>
+
             <p
               style={{
                 display: "flex",
                 alignItems: "flex-start",
                 marginBottom: "10px",
-                fontFamily: "'Georgia', serif",
               }}
             >
-              {/* Giả sử icon địa chỉ */}
               <i
                 className="fa-solid fa-location-dot"
                 style={{
@@ -181,30 +174,28 @@ export default function Footer() {
               ></i>
               {CONTACT_DATA.address}
             </p>
+
             <p
               style={{
                 display: "flex",
                 alignItems: "center",
                 marginBottom: "10px",
-                fontFamily: "'Georgia', serif",
               }}
             >
-              {/* Giả sử icon điện thoại */}
               <i
                 className="fa-solid fa-phone"
                 style={{ marginRight: "10px", color: COLOR_PALETTE.primary }}
               ></i>
               Hotline: {CONTACT_DATA.phone}
             </p>
+
             <p
               style={{
                 display: "flex",
                 alignItems: "center",
                 marginBottom: "25px",
-                fontFamily: "'Georgia', serif",
               }}
             >
-              {/* Giả sử icon email */}
               <i
                 className="fa-solid fa-envelope"
                 style={{ marginRight: "10px", color: COLOR_PALETTE.primary }}
@@ -212,64 +203,80 @@ export default function Footer() {
               Email: {CONTACT_DATA.email}
             </p>
 
-            {/* Social Media */}
-            <div style={{ marginTop: "20px" }}>
+            {/* SOCIAL ICONS — dùng PNG/JPG */}
+            <div
+              style={{
+                marginTop: "20px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <a
                 href={CONTACT_DATA.fb}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={socialIconStyle}
-                onMouseEnter={(e) => (e.target.style.color = "#3b5998")}
-                onMouseLeave={(e) =>
-                  (e.target.style.color = COLOR_PALETTE.footerText)
-                }
               >
-                <i className="fa-brands fa-facebook"></i>
+                <img
+                  src="/icons/facebook.png"
+                  alt="Facebook"
+                  style={socialIconImage}
+                  onMouseEnter={(e) =>
+                    (e.target.style.transform = "scale(1.15)")
+                  }
+                  onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+                />
               </a>
+
               <a
                 href={`https://zalo.me/${CONTACT_DATA.zalo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={socialIconStyle}
-                onMouseEnter={(e) => (e.target.style.color = "#0068ff")}
-                onMouseLeave={(e) =>
-                  (e.target.style.color = COLOR_PALETTE.footerText)
-                }
               >
-                <i className="fa-brands fa-zalo"></i>
+                <img
+                  src="/icons/zalo.jpg"
+                  alt="Zalo"
+                  style={socialIconImage}
+                  onMouseEnter={(e) =>
+                    (e.target.style.transform = "scale(1.15)")
+                  }
+                  onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+                />
               </a>
+
               <a
                 href={CONTACT_DATA.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={socialIconStyle}
-                onMouseEnter={(e) => (e.target.style.color = "#000000")}
-                onMouseLeave={(e) =>
-                  (e.target.style.color = COLOR_PALETTE.footerText)
-                }
               >
-                <i className="fa-brands fa-tiktok"></i>
+                <img
+                  src="/icons/tiktok.jpg"
+                  alt="TikTok"
+                  style={socialIconImage}
+                  onMouseEnter={(e) =>
+                    (e.target.style.transform = "scale(1.15)")
+                  }
+                  onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+                />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Copyright Bar */}
+        {/* Copyright */}
         <div
           style={{
             borderTop: `1px solid ${COLOR_PALETTE.primary}50`,
             paddingTop: "20px",
             textAlign: "center",
             fontSize: "0.9rem",
-            fontFamily: "'Georgia', serif",
           }}
         >
-          <p style={{ marginBottom: "5px" }}>
+          <p>
             &copy; {new Date().getFullYear()} Elegant Hotel Hue, All rights
             reserved.
           </p>
           <p style={{ color: COLOR_PALETTE.primary }}>
-            Địa chỉ: {CONTACT_DATA.address}
+            Address: {CONTACT_DATA.address}
           </p>
         </div>
       </div>

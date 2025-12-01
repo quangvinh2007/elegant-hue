@@ -37,7 +37,7 @@ export function Contact() {
     }, 1500);
   };
 
-  const HOTEL_EMAIL = "vinhnqde170404@fpt.edu.vn";
+  const HOTEL_EMAIL = "elegant.hotelhue@gmail.com";
   const HOTEL_PHONE = "0813.756.868";
 
   return (

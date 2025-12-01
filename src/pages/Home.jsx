@@ -250,12 +250,11 @@ export default function Home() {
             <h2
               className="about-title"
               style={{
-                fontSize: "2.5rem", // Giảm kích thước font
+                fontSize: "2.5rem",
                 fontWeight: "700",
                 color: COLOR_PALETTE.primary,
                 marginBottom: "40px",
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
+                letterSpacing: "0.02em",
                 borderBottom: `3px solid ${COLOR_PALETTE.primary}50`,
                 paddingBottom: "15px",
                 alignSelf: "flex-start",
@@ -267,7 +266,7 @@ export default function Home() {
             <div
               className="about-text"
               style={{
-                fontSize: "1.1rem", // Giảm kích thước font
+                fontSize: "1.1rem",
                 lineHeight: "1.8",
                 color: "#444",
                 marginBottom: "40px",
@@ -276,12 +275,11 @@ export default function Home() {
             >
               <p style={{ marginBottom: "20px" }}>
                 <strong style={{ color: COLOR_PALETTE.primary }}>
-                  Dịch vụ tuyệt vời
-                </strong>
-                , cơ sở vật chất hoàn chỉnh và các tiện nghi khách sạn cung cấp
-                sẽ khiến quý khách không thể phàn nàn trong suốt kỳ lưu trú tại
-                Elegant Hotel Hue. Chúng tôi cam kết mang đến trải nghiệm lưu
-                trú **đẳng cấp 5 sao** giữa lòng Cố đô.
+                  Elegant Hotel Hue
+                </strong>{" "}
+                mang đến trải nghiệm lưu trú đẳng cấp với dịch vụ tận tâm, không
+                gian tinh tế và cơ sở vật chất hiện đại. Chúng tôi cam kết đem
+                đến cho quý khách một kỳ nghỉ thoải mái và đáng nhớ.
               </p>
 
               <ul
@@ -293,24 +291,23 @@ export default function Home() {
               >
                 <li style={{ marginBottom: "8px" }}>
                   <strong style={{ color: COLOR_PALETTE.primary }}>✓</strong>{" "}
-                  Quầy tiếp tân 24 giờ luôn sẵn sàng phục vụ với thái độ
-                  **chuyên nghiệp và tận tâm nhất**.
+                  Dịch vụ hỗ trợ 24/7 với đội ngũ nhân viên chuyên nghiệp.
                 </li>
                 <li style={{ marginBottom: "8px" }}>
-                  <strong style={{ color: COLOR_PALETTE.primary }}>✓</strong>{" "}
-                  Tận hưởng những món ăn đặc biệt từ đầu bếp hàng đầu, chỉ dành
-                  riêng cho quý khách.
+                  <strong style={{ color: COLOR_PALETTE.primary }}>✓</strong> Ẩm
+                  thực đặc sắc được chế biến bởi đầu bếp giàu kinh nghiệm.
                 </li>
                 <li>
                   <strong style={{ color: COLOR_PALETTE.primary }}>✓</strong>{" "}
-                  Sóng WiFi tốc độ cao phủ khắp các khu vực, giữ quý khách luôn
-                  kết nối.
+                  WiFi tốc độ cao phủ sóng toàn bộ khách sạn.
                 </li>
               </ul>
 
               <p>
-                Với những tiện nghi sẵn có, Elegant Hotel Hue thực sự là một nơi
-                lưu trú hoàn hảo, nơi sự tiện nghi gặp gỡ vẻ đẹp sang trọng.
+                <em>
+                  Elegant Hotel Hue – nơi sự sang trọng và tiện nghi hội tụ,
+                  mang đến kỳ nghỉ hoàn hảo cho mọi du khách.
+                </em>
               </p>
             </div>
 
@@ -559,7 +556,7 @@ export default function Home() {
                     margin: "5px 0 15px 0",
                   }}
                 >
-                  “
+                  "
                 </div>
                 <p
                   style={{

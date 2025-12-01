@@ -17,26 +17,6 @@ export function Banner({ images = defaultImages }) {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  const nextSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
-        setIsTransitioning(false);
-      }, 800);
-    }
-  };
-
-  const prevSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-        setIsTransitioning(false);
-      }, 800);
-    }
-  };
-
   return (
     <section style={styles.bannerSection}>
       <style>{`
@@ -73,15 +53,6 @@ export function Banner({ images = defaultImages }) {
           }
         }
 
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-
         .banner-image {
           animation: fadeIn 1.5s ease-out;
         }
@@ -96,15 +67,6 @@ export function Banner({ images = defaultImages }) {
 
         .banner-ornament {
           animation: float 3s ease-in-out infinite;
-        }
-
-        .nav-arrow:hover {
-          transform: scale(1.1);
-          background: rgba(212, 175, 55, 0.3);
-        }
-
-        .nav-arrow:active {
-          transform: scale(0.95);
         }
 
         @media (max-width: 768px) {
@@ -160,51 +122,6 @@ export function Banner({ images = defaultImages }) {
           ✦
         </div>
       </div>
-
-      {/* Navigation Arrows */}
-      <button
-        className="nav-arrow"
-        onClick={prevSlide}
-        aria-label="Previous slide"
-        style={{ ...styles.navArrow, left: "40px" }}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2.5"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
-      <button
-        className="nav-arrow"
-        onClick={nextSlide}
-        aria-label="Next slide"
-        style={{ ...styles.navArrow, right: "40px" }}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2.5"
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
 
       {/* Dots Navigation */}
       <div style={styles.dotsContainer}>
@@ -315,24 +232,6 @@ const styles = {
     fontSize: "3rem",
     color: "#d4af37",
     textShadow: "0 0 30px rgba(212,175,55,0.8)",
-  },
-  navArrow: {
-    position: "absolute",
-    top: "50%",
-    transform: "translateY(-50%)",
-    width: "60px",
-    height: "60px",
-    borderRadius: "50%",
-    background: "rgba(255,255,255,0.15)",
-    backdropFilter: "blur(10px)",
-    border: "2px solid rgba(212,175,55,0.3)",
-    color: "#fff",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-    zIndex: 4,
-    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
   },
   dotsContainer: {
     position: "absolute",
