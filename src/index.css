@@ -1,0 +1,307 @@
+/* src/styles/global.css - FIXED VERSION */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== HEADER - FIXED ===== */
+.site-header {
+  background: #f8f9fa;
+  color: #2c3e50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  margin: 0; /* Loại bỏ hoàn toàn margin */
+  padding: 0; /* Reset padding, để Header.jsx tự quản lý */
+  font-family: "'Georgia', serif";
+}
+
+/* ===== MAIN CONTENT - FIXED ===== */
+main {
+  margin-top: 0; /* QUAN TRỌNG: Xóa margin-top */
+  padding-top: 0; /* Đảm bảo không padding */
+  min-height: calc(100vh - 200px);
+}
+
+/* ===== HERO/BANNER - FIXED ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0; /* Loại bỏ margin */
+  padding: 0; /* Loại bỏ padding */
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero img.active {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 90%;
+  margin: 0; /* Xóa margin */
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 15px black;
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  margin: 20px 0;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  margin: 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.zalo-btn {
+  background: #00d21f;
+  color: white;
+}
+
+.zalo-btn:hover {
+  background: #00b318;
+  transform: scale(1.05);
+}
+
+.fb-btn {
+  background: #1877f2;
+  color: white;
+}
+
+.fb-btn:hover {
+  background: #1666d8;
+  transform: scale(1.05);
+}
+
+/* ===== SECTION GENERAL ===== */
+.section {
+  padding: 100px 0;
+  margin: 0; /* Loại bỏ margin */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #1e293b;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+.about-image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== ROOM CAROUSEL ===== */
+.rooms-carousel-section {
+  padding-bottom: 120px;
+}
+
+.room-slide-group {
+  gap: 30px;
+}
+
+/* ===== REVIEW SECTION ===== */
+.review-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 50px;
+}
+
+/*==========================================================*/
+/* MEDIA QUERIES */
+/*==========================================================*/
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+  .btn {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    margin: 10px;
+  }
+  .about-grid-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .about-image-column {
+    padding: 40px 60px;
+  }
+  .about-content-column {
+    padding: 60px 60px;
+    order: 2;
+    text-align: center;
+  }
+  .about-content-column .about-title {
+    align-self: center;
+    font-size: 2rem;
+    padding-bottom: 10px;
+  }
+  .about-content-column .about-text {
+    text-align: left;
+  }
+  .about-content-column ul {
+    text-align: left;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  main {
+    margin-top: 0; /* QUAN TRỌNG: Giữ 0 cho mobile */
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  .section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .about-image-column {
+    padding: 30px 20px;
+  }
+  .about-content-column {
+    padding: 40px 20px;
+  }
+  .about-content-column .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .about-content-column .about-text {
+    font-size: 1rem;
+  }
+  .room-slide-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0;
+  }
+  .room-home-card {
+    min-width: 90%;
+    max-width: 400px;
+  }
+  .room-home-card img {
+    height: 350px !important;
+  }
+  .nav-button-prev,
+  .nav-button-next {
+    width: 40px !important;
+    height: 40px !important;
+    top: 30%;
+  }
+  .nav-button-prev span,
+  .nav-button-next span {
+    font-size: 1.5rem !important;
+  }
+  .rooms-carousel-section .container {
+    padding: 0;
+  }
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
